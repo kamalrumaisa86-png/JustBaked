@@ -1,0 +1,340 @@
+
+/* GENERAL */
+:root {
+    --cream: #fffaf1;
+    --light-cream: #fff3df;
+    --brown: #503326;
+    --dark-brown: #352117;
+    --gold: #d6a64f;
+    --muted: #806d60;
+    --white: #ffffff;
+    --yellow: #FFDE59;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--brown);
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    background: rgba(255, 249, 230, 0.97);
+    padding: 17px 0;
+    border-bottom: 1px solid rgba(178, 138, 39, 0.12);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-brand,
+.footer-brand {
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -1px;
+}
+
+.navbar-brand span,
+.footer-brand span {
+    color: var(--gold);
+}
+
+.navbar-brand .brand-dot,
+.footer-brand .brand-dot {
+    color: var(--dark);
+}
+
+.nav-link {
+    color: var(--brown);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 9px;
+    padding: 9px 0 !important;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold) !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background: var(--gold);
+    bottom: 4px;
+    left: 0;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-order-btn {
+    background: var(--yellow);
+    color: var(--dark);
+    border-radius: 50px;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.nav-order-btn:hover {
+    background: var(--dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.nav-order-btn i {
+    margin-left: 6px;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(38, 38, 38, 0.15);
+    padding: 8px 11px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(178, 138, 39, 0.18);
+}
+
+/* HERO */
+.hero {
+    padding: 90px 0 75px;
+    background: linear-gradient(135deg, #fff3df, #fffaf1);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: #98723b;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.eyebrow-line {
+    display: inline-block;
+    width: 35px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.8rem, 6vw, 4.7rem);
+    font-weight: 700;
+    line-height: 1.12;
+}
+
+.hero p {
+    max-width: 650px;
+    color: var(--muted);
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.hero em {
+    color: #a77932;
+    font-family: "Great Vibes", cursive;
+    font-size: 1.7rem;
+}
+
+/* CAKE MENU */
+.buttercream-cakes {
+    padding: 80px 0;
+}
+
+.section-heading {
+    margin-bottom: 42px;
+    text-align: center;
+}
+
+.section-label {
+    color: #a77932;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin: 12px 0;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* CAKE CARDS */
+.cake-card {
+    height: 100%;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid #f0e4d2;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(53, 33, 23, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cake-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(53, 33, 23, 0.12);
+}
+
+.cake-image,
+.cake-placeholder {
+    display: block;
+    width: 100%;
+    height: 240px;
+}
+
+.cake-image {
+    object-fit: cover;
+}
+
+.cake-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-cream);
+    color: var(--gold);
+    font-size: 3rem;
+}
+
+.red-velvet-placeholder {
+    background: #f7e4df;
+    color: #a64b46;
+}
+
+.cake-info {
+    padding: 24px;
+}
+
+.cake-info h3 {
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.cake-description {
+    min-height: 48px;
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+
+.cake-prices {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px 14px;
+    padding-top: 16px;
+    border-top: 1px solid #eee2d2;
+    font-size: 0.92rem;
+}
+
+.cake-prices span {
+    color: var(--muted);
+}
+
+.cake-prices strong {
+    color: var(--brown);
+    text-align: right;
+}
+
+/* ORDER CALL TO ACTION */
+.menu-cta {
+    margin-top: 70px;
+    padding: 45px 24px;
+    border-radius: 20px;
+    background: var(--light-cream);
+    text-align: center;
+}
+
+.menu-cta h2 {
+    margin-bottom: 12px;
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+}
+
+.menu-cta p {
+    margin-bottom: 24px;
+    color: var(--muted);
+}
+
+/* FOOTER */
+.site-footer {
+    padding: 40px 0 25px;
+    background: var(--dark-brown);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer-brand {
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.footer-brand span {
+    color: var(--gold);
+}
+
+.site-footer p {
+    margin: 10px 0;
+    color: #e4d3c5;
+}
+
+.site-footer .copyright {
+    margin-top: 25px;
+    font-size: 0.85rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+    .hero {
+        padding: 65px 0 50px;
+    }
+
+    .buttercream-cakes {
+        padding: 55px 0;
+    }
+
+    .cake-image,
+    .cake-placeholder {
+        height: 220px;
+    }
+
+    .cake-info {
+        padding: 20px;
+    }
+
+    .menu-cta {
+        margin-top: 45px;
+    }
+}

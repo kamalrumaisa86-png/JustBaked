@@ -1,0 +1,340 @@
+
+/* ==========================
+   JUSTBAKED — REVIEWS PAGE
+   Elegant • Warm • Bakery-inspired
+========================== */
+
+:root {
+    --cream: #FFF9E6;
+    --cream-dark: #FFF2CF;
+    --yellow: #FFDE59;
+    --gold: #B28A27;
+    --dark: #262626;
+    --brown: #665748;
+    --white: #FFFFFF;
+    --soft-border: #EDE1C8;
+}
+
+/* GENERAL STYLING */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--brown);
+    font-family: "DM Sans", sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: rgba(255, 249, 230, 0.96);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--soft-border);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-brand {
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -1px;
+}
+
+.navbar-brand span {
+    color: var(--gold);
+}
+
+.navbar-brand .brand-dot {
+    color: var(--dark);
+}
+
+.nav-link {
+    position: relative;
+    margin: 0 9px;
+    padding: 9px 0 !important;
+    color: var(--brown);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold) !important;
+}
+
+.nav-link::after {
+    position: absolute;
+    content: "";
+    bottom: 3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-order-btn {
+    padding: 11px 23px;
+    border: 1px solid var(--yellow);
+    border-radius: 50px;
+    background: var(--yellow);
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.nav-order-btn:hover {
+    background: var(--dark);
+    border-color: var(--dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.nav-order-btn i {
+    margin-left: 6px;
+}
+
+.navbar-toggler {
+    border: 1px solid var(--soft-border);
+    padding: 8px 11px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(178, 138, 39, 0.18);
+}
+
+/* HERO SECTION */
+
+.hero {
+    position: relative;
+    padding: 88px 0 64px;
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(255, 222, 89, 0.20),
+            transparent 68%
+        );
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.eyebrow-line {
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.hero h1 {
+    margin: 0 auto 20px;
+    color: var(--dark);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.hero p {
+    max-width: 520px;
+    margin: 0 auto;
+    color: var(--brown);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero p em {
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+}
+
+/* REVIEWS GALLERY */
+
+.reviews-gallery {
+    padding: 22px 0 100px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 30px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+/* IMAGE CARDS */
+
+.reviews-card {
+    min-width: 0;
+    padding: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(178, 138, 39, 0.13);
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: 0 8px 28px rgba(102, 87, 72, 0.07);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.reviews-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(178, 138, 39, 0.35);
+    box-shadow: 0 16px 36px rgba(102, 87, 72, 0.12);
+}
+
+.reviews-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* TABLETS */
+
+@media (max-width: 991px) {
+    .hero {
+        padding: 72px 0 50px;
+    }
+
+    .reviews-grid {
+        gap: 22px;
+    }
+
+    .reviews-card {
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 13px 0;
+    }
+
+    .navbar-brand {
+        font-size: 26px;
+    }
+
+    .hero {
+        padding: 58px 0 38px;
+    }
+
+    .hero h1 {
+        max-width: 520px;
+        font-size: clamp(32px, 7vw, 44px);
+        letter-spacing: -0.7px;
+    }
+
+    .hero p {
+        padding: 0 12px;
+        font-size: 14px;
+    }
+
+    .eyebrow {
+        gap: 8px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .eyebrow-line {
+        width: 22px;
+    }
+
+    .reviews-gallery {
+        padding: 14px 0 65px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .reviews-card {
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .reviews-card img {
+        border-radius: 10px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+    .hero {
+        padding: 44px 0 30px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .reviews-grid {
+        gap: 17px;
+    }
+
+    .reviews-card {
+        padding: 8px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reviews-card,
+    .nav-order-btn,
+    .nav-link,
+    .nav-link::after {
+        transition: none;
+    }
+
+    .reviews-card:hover,
+    .nav-order-btn:hover {
+        transform: none;
+    }
+}

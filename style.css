@@ -1,0 +1,839 @@
+
+/* ==========================
+   JUSTBAKED DESIGN SYSTEM
+========================== */
+
+:root {
+    --cream: #FFF9E6;
+    --cream-dark: #FFF2CF;
+    --yellow: #FFDE59;
+    --gold: #B28A27;
+    --dark: #262626;
+    --brown: #665748;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--dark);
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+a {
+    transition: all 0.25s ease;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+    background: rgba(255, 249, 230, 0.97);
+    padding: 17px 0;
+    border-bottom: 1px solid rgba(178, 138, 39, 0.12);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-brand,
+.footer-brand {
+    font-family: "Playfair Display", serif;
+    font-size: 29px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -1px;
+}
+
+.navbar-brand span,
+.footer-brand span {
+    color: var(--gold);
+}
+
+.navbar-brand .brand-dot,
+.footer-brand .brand-dot {
+    color: var(--dark);
+}
+
+.nav-link {
+    color: var(--brown);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 9px;
+    padding: 9px 0 !important;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold) !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background: var(--gold);
+    bottom: 4px;
+    left: 0;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-order-btn {
+    background: var(--yellow);
+    color: var(--dark);
+    border-radius: 50px;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.nav-order-btn:hover {
+    background: var(--dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.nav-order-btn i {
+    margin-left: 6px;
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(38, 38, 38, 0.15);
+    padding: 8px 11px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(178, 138, 39, 0.18);
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+    background: var(--cream);
+    padding: 95px 0 105px;
+    overflow: hidden;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+    color: var(--gold);
+    margin-bottom: 23px;
+}
+
+.eyebrow-line {
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.hero h1 {
+    font-family: "Great Vibes", cursive;
+    color: var(--gold);
+    font-size: clamp(58px, 6vw, 90px);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(33px, 3.6vw, 52px);
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    max-width: 550px;
+    margin-bottom: 22px;
+}
+
+.hero h2 em {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.hero-content > p {
+    color: var(--brown);
+    font-size: 16px;
+    line-height: 1.95;
+    max-width: 465px;
+    margin-bottom: 32px;
+}
+
+.btn-primary-custom {
+    background: var(--yellow);
+    color: var(--dark);
+    border: 1px solid var(--yellow);
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btn-primary-custom:hover {
+    background: var(--dark);
+    color: var(--white);
+    border-color: var(--dark);
+    transform: translateY(-3px);
+}
+
+.btn-primary-custom i {
+    margin-left: 8px;
+}
+
+.btn-secondary-custom {
+    background: transparent;
+    border: 1px solid rgba(102, 87, 72, 0.4);
+    color: var(--dark);
+    padding: 15px 24px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-secondary-custom:hover {
+    border-color: var(--gold);
+    background: var(--cream-dark);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+.btn-secondary-custom i {
+    margin-right: 7px;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--brown);
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.hero-note i {
+    color: var(--gold);
+    font-size: 12px;
+}
+
+/* ==========================
+   HERO IMAGE
+========================== */
+
+.hero-image-wrap {
+    position: relative;
+    max-width: 570px;
+    margin-left: auto;
+}
+
+.hero-image-bg {
+    background: #F9EED3;
+    border-radius: 46% 46% 32px 32px;
+    padding: 25px;
+    min-height: 490px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(178, 138, 39, 0.12);
+}
+
+.hero-cake {
+    width: 100%;
+    height: 445px;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 22px rgba(84, 62, 27, 0.13));
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: 35px;
+    left: -23px;
+    background: var(--white);
+    padding: 18px 23px;
+    border-radius: 17px;
+    box-shadow: 0 12px 35px rgba(77, 54, 25, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: rotate(-5deg);
+}
+
+.hero-badge > i {
+    font-size: 25px;
+    color: var(--gold);
+}
+
+.hero-badge span {
+    font-size: 12px;
+    color: var(--brown);
+    line-height: 1.5;
+}
+
+.hero-badge strong {
+    font-family: "Playfair Display", serif;
+    color: var(--dark);
+    font-size: 20px;
+}
+
+.hero-sparkle {
+    position: absolute;
+    color: var(--gold);
+    pointer-events: none;
+}
+
+.sparkle-one {
+    right: -10px;
+    top: 45px;
+    font-size: 35px;
+}
+
+.sparkle-two {
+    left: 16px;
+    top: 40px;
+    font-size: 24px;
+}
+
+/* ==========================
+   HIGHLIGHTS
+========================== */
+
+.highlights {
+    background: #FFF4D9;
+    padding: 47px 0;
+    border-top: 1px solid rgba(178, 138, 39, 0.09);
+    border-bottom: 1px solid rgba(178, 138, 39, 0.09);
+}
+
+.highlight-item {
+    text-align: center;
+    padding: 12px 10px;
+}
+
+.highlight-icon {
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    background: rgba(255, 222, 89, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: transform 0.25s ease;
+}
+
+.highlight-icon i {
+    color: var(--gold);
+    font-size: 29px;
+}
+
+.highlight-item:hover .highlight-icon {
+    transform: translateY(-5px);
+}
+
+.highlight-item h4 {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 9px;
+}
+
+.highlight-item p {
+    font-size: 12px;
+    color: var(--brown);
+    margin: 0;
+}
+
+/* ==========================
+   FEATURED CAKES
+========================== */
+
+.featured-cakes {
+    background: var(--cream);
+    padding: 100px 0 105px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--dark);
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 600;
+    margin-bottom: 13px;
+}
+
+.section-heading h2 em {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.section-heading p {
+    color: var(--brown);
+    font-size: 15px;
+    margin-bottom: 19px;
+}
+
+.heading-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    color: var(--gold);
+    font-size: 12px;
+}
+
+.heading-decoration span {
+    height: 1px;
+    width: 38px;
+    background: rgba(178, 138, 39, 0.4);
+}
+
+/* Cake cards */
+
+.cake-card {
+    background: var(--white);
+    border-radius: 17px;
+    padding: 11px;
+    height: 100%;
+    border: 1px solid rgba(178, 138, 39, 0.10);
+    box-shadow: 0 6px 25px rgba(60, 42, 15, 0.045);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cake-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(60, 42, 15, 0.12);
+}
+
+.cake-image {
+    position: relative;
+    background: #FFF6E3;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 9px;
+    transition: transform 0.4s ease;
+}
+
+.cake-card:hover .cake-image img {
+    transform: scale(1.045);
+}
+
+.cake-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--brown);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 30px;
+    letter-spacing: 0.2px;
+}
+
+.cake-details {
+    padding: 20px 10px 16px;
+}
+
+.cake-details h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--dark);
+    font-size: 18px;
+    margin-bottom: 13px;
+    font-weight: 600;
+}
+
+.cake-details a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.cake-details a:hover {
+    color: var(--dark);
+}
+
+.gallery-cta {
+    text-align: center;
+    margin-top: 45px;
+}
+
+/* ==========================
+   ORDER SECTION
+========================== */
+
+.order-section {
+    background: var(--yellow);
+    padding: 85px 0;
+    text-align: center;
+}
+
+.order-content {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.order-heart {
+    color: var(--dark);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.order-section .section-label {
+    color: #6D540E;
+}
+
+.order-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 4vw, 47px);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.order-content h2 em {
+    font-weight: 500;
+}
+
+.order-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 450px;
+    margin: 0 auto 30px;
+    color: #4E421D;
+}
+
+.btn-dark-custom {
+    border-radius: 50px;
+    padding: 15px 29px;
+    background: var(--dark);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-dark-custom:hover {
+    background: var(--white);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+.btn-dark-custom i {
+    margin-right: 8px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer {
+    background: #29251E;
+    color: #E6DFCF;
+    padding: 65px 0 22px;
+}
+
+.footer-brand {
+    display: inline-block;
+    color: var(--white);
+    margin-bottom: 17px;
+}
+
+.footer-brand span {
+    color: var(--yellow);
+}
+
+.footer-brand .brand-dot {
+    color: var(--white);
+}
+
+.footer p {
+    color: #C2BAA9;
+    line-height: 1.9;
+    max-width: 290px;
+    font-size: 14px;
+}
+
+.footer h4 {
+    color: var(--white);
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    margin-bottom: 22px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #C2BAA9;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: var(--yellow);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    color: var(--yellow);
+    border: 1px solid rgba(255, 222, 89, 0.35);
+    font-size: 19px;
+}
+
+.social-link:hover {
+    background: var(--yellow);
+    color: var(--dark);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+    margin-top: 48px;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #B6AD9C;
+}
+
+.footer-bottom i {
+    color: var(--yellow);
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding-top: 15px;
+    }
+
+    .nav-link {
+        margin: 3px 0;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-order-btn {
+        margin-top: 12px;
+    }
+
+    .hero {
+        padding: 65px 0 80px;
+    }
+
+    .hero-image-wrap {
+        margin: 0 auto;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .eyebrow,
+    .hero-buttons,
+    .hero-note {
+        justify-content: center;
+    }
+
+    .hero-content > p,
+    .hero h2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        padding: 55px 0 65px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+    .hero-image-bg {
+        min-height: 340px;
+        padding: 15px;
+        border-radius: 42% 42% 25px 25px;
+    }
+
+    .hero-cake {
+        height: 325px;
+    }
+
+    .hero-badge {
+        left: 4px;
+        bottom: 10px;
+        padding: 12px 15px;
+    }
+
+    .highlights {
+        padding: 35px 0;
+    }
+
+    .highlight-item {
+        padding: 10px 4px;
+    }
+
+    .highlight-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 14px;
+    }
+
+    .highlight-icon i {
+        font-size: 25px;
+    }
+
+    .highlight-item h4 {
+        font-size: 14px;
+    }
+
+    .highlight-item p {
+        font-size: 11px;
+    }
+
+    .featured-cakes {
+        padding: 65px 0 75px;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .cake-image {
+        height: 210px;
+    }
+
+    .cake-details {
+        padding: 14px 5px 12px;
+    }
+
+    .cake-details h3 {
+        font-size: 15px;
+    }
+
+    .cake-tag {
+        font-size: 9px;
+        padding: 6px 8px;
+    }
+
+    .order-section {
+        padding: 65px 0;
+    }
+
+    .footer {
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .cake-image {
+        height: 165px;
+    }
+
+    .cake-card {
+        padding: 7px;
+    }
+
+    .cake-tag {
+        display: none;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom {
+        padding: 12px 17px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
